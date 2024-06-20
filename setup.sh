@@ -6,7 +6,7 @@ dpkg -i vscode.deb
 apt install -f -y
 dpkg -i vscode.deb
 # setup python
-apt install python3-venv -y
+apt install python3-dev python3-venv -y
 python3 -m venv .venv
 echo 'source /root/.venv/bin/activate' >> .bashrc
 source .bashrc
