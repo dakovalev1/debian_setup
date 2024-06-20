@@ -16,4 +16,5 @@ apt install gcc -y
 mkdir getifaddrs_skip
 printf '#include <errno.h>\n#include <ifaddrs.h>\nint getifaddrs(struct ifaddrs **ifap) {\n\terrno = EOPNOTSUPP;\n\treturn -1;\n}' > getifaddrs_skip/getifaddr.c
 gcc getifaddrs_skip/getifaddr.c -o getifaddrs_skip/getifaddr.so -shared
+printf 'LD_PRELOAD=/root/getifaddrs_skip/getifaddr.so\n' > getifaddrs_skip/.env
 # LD_PRELOAD=/root/getifaddrs_skip/getifaddr.so jupyter-notebook
