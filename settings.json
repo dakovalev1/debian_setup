@@ -37,5 +37,5 @@
         "/home/user/repository/latex/dev/packages"
     ],
     "keyboard.dispatch": "keyCode",
-    "python.envFile": "/root/skip_getifaddrs/.env"
+    "python.envFile": "/root/getifaddrs_skip/.env"
 }
