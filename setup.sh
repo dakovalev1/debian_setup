@@ -14,6 +14,6 @@ pip install numpy scipy jupyter
 # skip getifaddrs
 apt install gcc -y
 mkdir getifaddrs_skip
-echo -e '#include <errno.h>\n#include <ifaddrs.h>\nint getifaddrs(struct ifaddrs **ifap) {\n\terrno = EOPNOTSUPP;\n\treturn -1;\n}' > getifaddrs_skip/getifaddr.c
+printf '#include <errno.h>\n#include <ifaddrs.h>\nint getifaddrs(struct ifaddrs **ifap) {\n\terrno = EOPNOTSUPP;\n\treturn -1;\n}' > getifaddrs_skip/getifaddr.c
 gcc getifaddrs_skip/getifaddr.c -o getifaddrs_skip/getifaddr.so -shared
 # LD_PRELOAD=/root/getifaddrs_skip/getifaddr.so jupyter-notebook
